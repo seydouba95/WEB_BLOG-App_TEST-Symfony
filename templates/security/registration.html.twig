@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Inscription sur le site </h1>
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.username, {'label': 'Nom d\'utilisateur','attr':
+        { 'placeholder' : "Nom d\ ' utilisateur ..." }}) }} <!--gere le label les erreurs-->
+    {{ form_row(form.email, {'label': 'Adresse Email','attr':
+        { 'placeholder' : "Adresse Email ..." }}) }} <!--gere le label les erreurs-->
+    {{ form_row(form.password, {'label': 'Mot de passe ','attr':
+        { 'placeholder' : "Mot de passe !" }}) }} <!--gere le label les erreurs-->
+    {{ form_row(form.confirm_password, {'label': 'Confirmation du mot de passe ','attr':
+        { 'placeholder' : "Confirmation du mot de passe !" }}) }} <!--gere le label les erreurs-->
+
+    <button type="submit" class="btn btn-success">Inscription</button>
+
+    {{ form_end(form) }}
+    <hr>
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+{% endblock %}
