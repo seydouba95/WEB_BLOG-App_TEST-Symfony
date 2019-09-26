@@ -1,27 +1,34 @@
-{% extends 'base.html.twig' %}
+
 {% block body %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <h1>Inscription sur le site </h1>
 
-    {{ form_start(form) }}
+    <div class="container-fluid">
+        <h1 style="text-align: center">Inscription sur le site </h1>
+        {{ form_start(form)  }}
 
-    {{ form_row(form.username, {'label': 'Nom d\'utilisateur','attr':
-        { 'placeholder' : "Nom d\ ' utilisateur ..." }}) }} <!--gere le label les erreurs-->
-    {{ form_row(form.email, {'label': 'Adresse Email','attr':
-        { 'placeholder' : "Adresse Email ..." }}) }} <!--gere le label les erreurs-->
-    {{ form_row(form.password, {'label': 'Mot de passe ','attr':
-        { 'placeholder' : "Mot de passe !" }}) }} <!--gere le label les erreurs-->
-    {{ form_row(form.confirm_password, {'label': 'Confirmation du mot de passe ','attr':
-        { 'placeholder' : "Confirmation du mot de passe !" }}) }} <!--gere le label les erreurs-->
+        {{ form_row(form.username, {'label': 'Nom d\'utilisateur','attr':
+            { 'placeholder' : "Nom d\ ' utilisateur ..." }}) }} <!--gere le label les erreurs-->
+        {{ form_row(form.email, {'label': 'Adresse Email','attr':
+            { 'placeholder' : "Adresse Email ..." }}) }} <!--gere le label les erreurs-->
+        {{ form_row(form.password, {'label': 'Mot de passe ','attr':
+            { 'placeholder' : "Mot de passe !" }}) }} <!--gere le label les erreurs-->
+        {{ form_row(form.confirm_password, {'label': 'Confirmation du mot de passe ','attr':
+            { 'placeholder' : "Confirmation du mot de passe !" }}) }} <!--gere le label les erreurs-->
 
-    <button type="submit" class="btn btn-success">Inscription</button>
+        <button type="submit" class="btn btn-success">Inscription</button>
 
-    {{ form_end(form) }}
-    <hr>
-    {% for message in app.flashes('notice') %}
-        <div class="flash-notice">
-            {{ message }}
-        </div>
-    {% endfor %}
+        {{ form_end(form) }}
+        <hr>
+        {% for message in app.flashes('notice') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+    </div>
+
 
 {% endblock %}

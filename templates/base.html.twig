@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,40 +8,11 @@
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="{{ path('home') }}">SymBlog</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('blog') }}">Articles<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('blog_create') }}">Creer un article</a>
-            </li>
-        </ul>
-
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-        {% if not app.user %}
-            <li><a href="{{ path('security_login') }}"><span class=" glyphicon glyphicon-user"></span> Connexion</a>
-            </li>
-        {% else %}
-            <li><a href="{{ path('security_logout') }}"><span class=" glyphicon glyphicon-log-in"></span>Deconnexion</a>
-            </li>
-        {% endif %}
-    </ul>
 
 
-</nav>
-<div class="container">
-    {% block body %}{% endblock %}
-</div>
 
-{% block javascripts %}{% endblock %}
+
+
+
 </body>
 </html>
