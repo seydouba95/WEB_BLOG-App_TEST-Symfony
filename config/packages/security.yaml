@@ -22,6 +22,7 @@ security:
         login_path: security_login
         check_path: security_login
 
+
       logout:
         path: security_logout
         target: blog
